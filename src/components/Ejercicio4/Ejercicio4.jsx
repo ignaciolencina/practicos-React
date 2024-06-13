@@ -17,6 +17,11 @@ const Ejercicio4 = () => {
     }
   };
 
+  const handleCompleted = (index) => {
+    const newArray = toDos.filter((_, i) => i !== index);
+    setToDos(newArray);
+  };
+
   return (
     <section className="container">
       <section className="card mt-5">
@@ -38,8 +43,16 @@ const Ejercicio4 = () => {
           <ul className="lista-toDos mt-4">
             {toDos.map((toDo, index) => {
               return (
-                <li key={index} className="toDos">
-                  {toDo}
+                <li key={index} className="toDos my-3">
+                  <div>
+                    {toDo}
+                    <button
+                      className="btn btn-success p-1 ms-5"
+                      onClick={() => handleCompleted(index)}
+                    >
+                      Completada
+                    </button>
+                  </div>
                 </li>
               );
             })}
