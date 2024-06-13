@@ -1,0 +1,10 @@
+.input-toDo{
+    border-radius: 0.5rem;
+    border: solid 1px green;
+    width: 400px;
+}
+
+.card {
+    display: flex;
+    width: 800px;
+}
