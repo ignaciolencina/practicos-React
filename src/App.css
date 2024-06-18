@@ -1,11 +1,5 @@
-*{
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-}
-
 body{
-  background-color: #120707 !important;
+  background-color: #984141 !important;
   color: #ffffff !important;
   padding: 1rem !important;
   min-height: 100vh !important;
