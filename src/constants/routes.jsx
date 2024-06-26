@@ -5,6 +5,7 @@ import Ejercicio2 from "../components/Ejercicio2/Ejercicio2";
 import Ejercicio3 from "../components/Ejercicio3/Ejercicio3";
 import Ejercicio4 from "../components/Ejercicio4/Ejercicio4";
 import Ejercicio5 from "../components/Ejercicio5/Ejercicio5";
+import Ejercicio7 from "../components/Ejercicio7/Ejercicio7";
 import Ejercicio8 from "../components/Ejercicio8/Ejercicio8";
 
 export const router = createBrowserRouter([
@@ -33,9 +34,13 @@ export const router = createBrowserRouter([
         element: <Ejercicio5 />,
       },
       {
+        path: "ejercicio7",
+        element: <Ejercicio7 />,
+       },
+       {
         path: "ejercicio8",
         element: <Ejercicio8 />,
-      },
+        }, 
     ],
   },
 ]);
