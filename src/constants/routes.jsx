@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import RootView from '../views/RootView';
+import RootView from "../views/RootView";
 import Ejercicio1 from "../components/Ejercicio1/Ejercicio1";
 import Ejercicio2 from "../components/Ejercicio2/Ejercicio2";
 import Ejercicio3 from "../components/Ejercicio3/Ejercicio3";
@@ -7,6 +7,7 @@ import Ejercicio4 from "../components/Ejercicio4/Ejercicio4";
 import Ejercicio5 from "../components/Ejercicio5/Ejercicio5";
 import Ejercicio7 from "../components/Ejercicio7/Ejercicio7";
 import Ejercicio8 from "../components/Ejercicio8/Ejercicio8";
+import Ejercicio9 from "../components/Ejercicio9/Ejercicio9";
 
 export const router = createBrowserRouter([
   {
@@ -36,11 +37,15 @@ export const router = createBrowserRouter([
       {
         path: "ejercicio7",
         element: <Ejercicio7 />,
-       },
-       {
+      },
+      {
         path: "ejercicio8",
         element: <Ejercicio8 />,
-        }, 
+      },
+      {
+        path: "ejercicio9",
+        element: <Ejercicio9 />,
+      },
     ],
   },
 ]);
