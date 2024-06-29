@@ -1,0 +1,29 @@
+.card {
+  height: 220px !important;
+}
+
+.patience-state {
+  width: 30px !important;
+  height: 30px;
+  background-color: #cfe2ff;
+  border-radius: 100%;
+  margin-left: 15px;
+}
+
+.title {
+  font-size: 14px;
+
+  .owner-title {
+    color: #a2a2a2;
+  }
+}
+
+.cont-box {
+  background-color: #cfe2ff;
+  .info-box {
+    background-color: #ffffff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
