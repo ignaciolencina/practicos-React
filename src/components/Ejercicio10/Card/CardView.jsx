@@ -8,10 +8,10 @@ import "./movCard.css"
 const CardView = (props) => {
   const { movies, setMovies } = props;
 
-  const deleteAppointment = (idMovie, nameMovie) => {
+  const deleteMovie = (idMovie, titleMovie) => {
     Swal.fire({
       title: "Atención",
-      html: `<p>Estás por eliminar la cita de <b>${nameMovie}</b>. Esta acción es irreversible</p>`,
+      html: `<p>Estás por eliminar la película <b>${titleMovie}</b>. Esta acción es irreversible</p>`,
       icon: "warning",
       showCancelButton: true,
       showConfirmButton: true,
@@ -20,13 +20,11 @@ const CardView = (props) => {
       cancelButtonText: "No, conservar",
     }).then((res) => {
       if (res.isConfirmed) {
-        // Actualizamos lista de contactos, eliminando este
         const newArray = movies.filter((c) => c.uCode !== idMovie);
         setMovies(newArray);
 
-        // Mostramos mensaje de exito
         Swal.fire({
-          title: "Cita eliminada exitosamente",
+          title: "Película eliminada exitosamente",
           icon: "success",
           showCancelButton: false,
           showConfirmButton: false,
@@ -36,12 +34,12 @@ const CardView = (props) => {
     });
   };
   return (
-    <section className="movies">
+    <section className="movies mb-5">
       {movies.map((movie) => {
         return (
           <CardMov
             movie={movie}
-            deleteAppointment={deleteAppointment}
+            deleteMovie={deleteMovie}
             key={movie.uCode}
           />
         );
