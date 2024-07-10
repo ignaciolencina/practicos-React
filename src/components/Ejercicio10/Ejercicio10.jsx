@@ -16,6 +16,7 @@ const Ejercicio10 = () => {
       <FormMovie movies={movies} setMovies={setMovies} />
       <h1 className="text-center my-4">Peliculas cargadas</h1>
       <CardView movies={movies} setMovies={setMovies} />
+      <h5 className="mb-5"><span className="text-danger">Spoiler alert!</span> No funciona el scroll horizontal si no es con el drag del mousepad, me suepera la situeichon 😢</h5>
     </>
   );
 };

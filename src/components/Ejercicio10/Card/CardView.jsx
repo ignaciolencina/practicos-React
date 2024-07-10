@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 
 import CardMov from "./CardMov";
+import ModalMov from "./ModalMov";
 
-import "./movCard.css"
+import "./movCard.css";
 
 const CardView = (props) => {
   const { movies, setMovies } = props;
@@ -37,11 +38,14 @@ const CardView = (props) => {
     <section className="movies mb-5">
       {movies.map((movie) => {
         return (
-          <CardMov
-            movie={movie}
-            deleteMovie={deleteMovie}
-            key={movie.uCode}
-          />
+          <>
+            <CardMov
+              movie={movie}
+              deleteMovie={deleteMovie}
+              key={movie.uCode}
+            />
+            <ModalMov movie={movie} />
+          </>
         );
       })}
     </section>
