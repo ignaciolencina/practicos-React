@@ -5,16 +5,31 @@ import "./style.css";
 const CardNews = (props) => {
   const { news } = props;
 
+  const replaceImage = (image_url) => {
+    if (image_url === null) {
+      return (
+        <img
+          src="https://e7.pngegg.com/pngimages/829/733/png-clipart-logo-brand-product-trademark-font-not-found-logo-brand.png"
+          alt="Imagen no encontrada"
+        />
+      );
+    }
+    return image_url;
+  };
   const trimDescription = (description) => {
-    if (description.length > 70) {
+    if (description && description.length > 70) {
       return description.substring(0, 70) + "...";
     }
-    return description;
+    return description || "No se encontro el resumen de esta noticia";
   };
   return (
     <article className="col-sm-3">
       <div className="card">
-        <img src={news.image_url} className="card-img-top" alt={news.keyword} />
+        <img
+          src={replaceImage(news.image_url)}
+          className="card-img-top"
+          alt={news.keywords}
+        />
         <div className="card-body d-flex flex-column justify-content-between">
           <div>
             <h5 className="card-title">{news.title}</h5>
@@ -39,13 +54,12 @@ const CardNews = (props) => {
 export default CardNews;
 
 CardNews.propTypes = {
-    news: PropTypes.shape({
-      article_id: PropTypes.string,
-      image_url: PropTypes.string,
-      keyword: PropTypes.string,
-      title: PropTypes.string,
-      pubDate: PropTypes.string,
-      description: PropTypes.string,
-      link: PropTypes.string,
-    }).isRequired,
-  };
+  news: PropTypes.shape({
+    image_url: PropTypes.string,
+    keywords: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    pubDate: PropTypes.string,
+    description: PropTypes.string,
+    link: PropTypes.string.isRequired,
+  }).isRequired,
+};
