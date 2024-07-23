@@ -2,7 +2,16 @@ import PropTypes from "prop-types";
 import CardNews from "./CardNews";
 
 const CardView = (props) => {
-  const { news } = props;
+  const { news, isLoading } = props;
+
+  if (isLoading) {
+    return <div>Cargando noticias...</div>;
+  }
+
+  if (!news.length) {
+    return <div>No hay noticias disponibles para esta categoría.</div>;
+  }
+
   return (
     <section className="mt-5 row g-4">
       {news.map((newsItem) => {
@@ -15,4 +24,5 @@ export default CardView;
 
 CardView.propTypes = {
   news: PropTypes.array.isRequiered,
+  isLoading: PropTypes.bool.isRequiered,
 };
