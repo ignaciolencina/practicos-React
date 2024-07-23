@@ -5,7 +5,7 @@ const CardView = (props) => {
   const { news, isLoading } = props;
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return <div>Cargando noticias...</div>;
   }
 
   if (!news.length) {
